@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import NumberBlock from './NumberBlock.vue'
-const randomValue = () => Math.round(Math.random() * 8) + 1
 </script>
 
 <template>
   <div class="sudoku-block">
-    <NumberBlock v-for="block in 9" :key="block" :value="randomValue()" />
+    <NumberBlock v-for="n in 9" :key="n" />
   </div>
 </template>
 
 <style scoped>
 .sudoku-block {
-  display: inline-block;
+  border: 1px solid #777;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
 }
 </style>
