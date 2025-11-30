@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GameBoard from './components/GameBoard.vue'
+</script>
 
 <template>
-  <h1>Sudoku</h1>
+  <GameBoard title="Welcome to Sudoku!" />
 </template>
 
 <style scoped></style>
