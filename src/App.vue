@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import GameBoard from './components/GameBoard.vue'
+import { RouterView } from 'vue-router'
+import MainNavigation from './components/MainNavigation.vue'
 </script>
 
 <template>
-  <GameBoard title="Welcome to Sudoku!" />
+  <MainNavigation />
+  <router-view></router-view>
 </template>
 
 <style scoped></style>

@@ -3,6 +3,7 @@ import SudokuBlock from './SudokuBlock.vue'
 </script>
 
 <template>
+  <p>{{ $route.params.level }}</p>
   <div class="board">
     <SudokuBlock v-for="n in 9" :key="n" />
   </div>
