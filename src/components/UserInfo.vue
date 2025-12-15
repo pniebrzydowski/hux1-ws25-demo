@@ -4,7 +4,7 @@ const userStore = useUserStore()
 </script>
 
 <template>
-  <input type="text" v-model="userStore.name" />
+  <p>{{ userStore.fullName }}</p>
 </template>
 
 <style scoped></style>
