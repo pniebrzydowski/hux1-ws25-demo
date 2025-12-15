@@ -16,7 +16,10 @@ export const useGameStore = defineStore('game', () => {
     }
   })
 
+  const board = ref<number[][]>([])
+
   return {
+    board,
     difficultyLevel,
     difficultyLabel,
   }
