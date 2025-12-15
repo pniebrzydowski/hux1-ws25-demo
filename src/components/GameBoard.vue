@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { useUserStore } from '@/store/useUserStore'
 import SudokuBlock from './SudokuBlock.vue'
-import UserForm from './UserForm.vue'
 const userStore = useUserStore()
 </script>
 
 <template>
   <h1>{{ userStore.display }}</h1>
   <p>{{ $route.params.level }}</p>
-  <UserForm />
   <div class="board">
     <SudokuBlock v-for="n in 9" :key="n" />
   </div>
