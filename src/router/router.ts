@@ -1,11 +1,10 @@
-import GameBoard from '@/components/GameBoard.vue'
-import SplashScreen from '@/components/SplashScreen.vue'
+import PlayScreen from '@/components/screens/PlayScreen.vue'
+import SplashScreen from '@/components/screens/SplashScreen.vue'
 import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: SplashScreen },
-  { path: '/game', component: GameBoard },
-  { path: '/game/:level', component: GameBoard, props: true },
+  { path: '/play', component: PlayScreen },
 ]
 
 export const router = createRouter({
