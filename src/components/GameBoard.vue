@@ -7,6 +7,7 @@ const userStore = useUserStore()
 
 <template>
   <h1>{{ userStore.display }}</h1>
+  <p>{{ $route.params.level }}</p>
   <UserForm />
   <div class="board">
     <SudokuBlock v-for="n in 9" :key="n" />
