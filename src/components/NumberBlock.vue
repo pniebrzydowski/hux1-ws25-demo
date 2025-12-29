@@ -1,7 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useGameStore } from '@/store/useGameStore'
+const props = defineProps<{
+  sudokuBlockIndex: number
+  numberBlockIndex: number
+}>()
+
+const { board } = useGameStore()
+</script>
 
 <template>
-  <div class="number-block"></div>
+  <div class="number-block">
+    {{ board[props.sudokuBlockIndex - 1][props.numberBlockIndex - 1] || '' }}
+  </div>
 </template>
 
 <style scoped>
