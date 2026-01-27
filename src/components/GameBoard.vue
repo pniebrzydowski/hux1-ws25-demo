@@ -9,7 +9,7 @@ const { isLoading } = useQuery({
   queryFn: async () => {
     const url = 'https://sugoku.onrender.com/board?difficulty=easy'
     const res = await fetch(url)
-    const data = await res.json()
+    const data = (await res.json()) as { board: number[][] }
     if (data?.board) {
       gameStore.board = transformArray(data.board)
     }
