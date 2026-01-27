@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { useGameStore } from '@/store/useGameStore'
+import { computed } from 'vue'
 const props = defineProps<{
   sudokuBlockIndex: number
   numberBlockIndex: number
 }>()
 
 const { board } = useGameStore()
+const number = computed(() => {
+  const sudokuBlock = board[props.sudokuBlockIndex - 1]
+  if (!sudokuBlock) return ''
+  return sudokuBlock[props.numberBlockIndex - 1] || ''
+})
 </script>
 
 <template>
   <div class="number-block">
-    {{ board[props.sudokuBlockIndex - 1][props.numberBlockIndex - 1] || '' }}
+    {{ number }}
   </div>
 </template>
 

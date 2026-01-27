@@ -4,11 +4,15 @@ export const transformArray = (originalArray: number[][]): number[][] => {
     for (let j = 0; j < 3; j++) {
       const newRow = []
       for (let k = 0; k < 3; k++) {
-        newRow.push(
-          originalArray[i + k][j * 3],
-          originalArray[i + k][j * 3 + 1],
-          originalArray[i + k][j * 3 + 2],
-        )
+        const row = originalArray[i + k]
+        if (row) {
+          const val1 = row[j * 3]
+          const val2 = row[j * 3 + 1]
+          const val3 = row[j * 3 + 2]
+          if (val1 !== undefined && val2 !== undefined && val3 !== undefined) {
+            newRow.push(val1, val2, val3)
+          }
+        }
       }
       newArray.push(newRow)
     }
